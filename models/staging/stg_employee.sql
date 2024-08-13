@@ -1,0 +1,13 @@
+-- models/staging/stg_employee.sql
+with source as (
+  select * from {{ source('raw_data', 'employee') }}
+)
+
+select
+  employee_id,
+  employee_name,
+  job_title,
+  hire_date,
+  department_id,
+  location
+from source

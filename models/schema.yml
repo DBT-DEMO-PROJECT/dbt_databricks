@@ -1,0 +1,73 @@
+version: 2
+
+models:
+  - name: resource_utilization
+    description: "Table for resource utilization data"
+    columns:
+      - name: resource_utilization_id
+        description: "Primary key for resource utilization"
+        data_tests:
+          - unique
+      - name: time_id
+      - name: employee_id
+      - name: project_id
+      - name: department_id
+      - name: utilization_hours
+      - name: utilization_percentage
+      - name: active
+        data_tests:
+          - accepted_values:
+              values: [true, false]
+
+  - name: time
+    description: "Table for time dimensions"
+    columns:
+      - name: time_id
+        description: "Primary key for time dimension"
+        data_tests:
+          - unique
+      - name: date
+      - name: day_of_week
+      - name: month
+      - name: quarter
+      - name: year
+      - name: week_of_year
+
+  - name: employee
+    description: "Table for employee details"
+    columns:
+      - name: employee_id
+        description: "Primary key for employee"
+        data_tests:
+          - unique
+      - name: employee_name
+      - name: job_title
+      - name: hire_date
+      - name: department_id
+      - name: location
+
+  - name: project
+    description: "Table for project details"
+    columns:
+      - name: project_id
+        description: "Primary key for project"
+        data_tests:
+          - unique
+      - name: project_name
+      - name: start_date
+      - name: end_date
+      - name: project_manager_id
+      - name: budget
+
+  - name: department
+    description: "Table for department details"
+    columns:
+      - name: department_id
+        description: "Primary key for department"
+        data_tests:
+          - unique
+      - name: department_name
+      - name: location
+      - name: head_of_department_id
+        data_tests:
+          - not_null
