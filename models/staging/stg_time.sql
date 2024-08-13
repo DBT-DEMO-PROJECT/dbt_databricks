@@ -1,6 +1,6 @@
 -- models/staging/stg_time.sql
 with source as (
-  select * from `dbtworkshop.raw_data.time_table`
+  select * from {{ source('raw_data', 'dim_time') }}
 )
 
 select

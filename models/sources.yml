@@ -1,91 +1,91 @@
-# version: 2
+version: 2
 
-#sources:
-#  - name: raw_data
-#    schema: dept_id  # Ensure this matches your actual schema name
-#    description: "Source for dbt database"
+sources:
+  - name: raw_data
+    schema: bronze  # Ensure this matches your actual schema name
+    description: "Source for dbt database"
 
-#    tables:
-#      - name: fact_resource_utilization
-#        description: "Table for resource utilization data"
-#        columns:
-#          - name: resource_utilization_id
-#            description: "Primary key for resource utilization"
-#            tests:
-#              - unique
-#               - not_null
-#           - name: time_id
-#            tests:
-#              - not_null
-#           - name: employee_id
-#             tests:
-#               - not_null
-#           - name: project_id
-#             tests:
-#               - not_null         
-#           - name: department_id
-#             tests:
-#               - not_null
-#           - name: utilization_hours
-#           - name: utilization_percentage
-#           - name: active
-#/
-#       - name: dim_time
-#         description: "Table for time dimensions"
-#         columns:
-#           - name: time_id
-#             description: "Primary key for time dimension"
-#             tests:
-#               - unique
-#               - not_null
-#           - name: date
-#           - name: day_of_week
-#           - name: month
-#           - name: quarter
-#           - name: year
-#           - name: week_of_year
+    tables:
+      - name: fact_resource_utilization
+        description: "Table for resource utilization data"
+        columns:
+          - name: resource_utilization_id
+            description: "Primary key for resource utilization"
+            tests:
+              - unique
+              - not_null
+          - name: time_id
+            tests:
+              - not_null
+          - name: employee_id
+            tests:
+              - not_null
+          - name: project_id
+            tests:
+              - not_null
+          - name: department_id
+            tests:
+              - not_null
+          - name: utilization_hours
+          - name: utilization_percentage
+          - name: active
 
-#       - name: dim_employee
-#         description: "Table for employee details"
-#         columns:
-#           - name: employee_id
-#             description: "Primary key for employee"
-#             tests:
-#               - unique
-#               - not_null
-#           - name: employee_name
-#           - name: job_title
-#           - name: hire_date
-#           - name: department_id
-#           - name: location
+      - name: dim_time
+        description: "Table for time dimensions"
+        columns:
+          - name: time_id
+            description: "Primary key for time dimension"
+            tests:
+              - unique
+              - not_null
+          - name: date
+          - name: day_of_week
+          - name: month
+          - name: quarter
+          - name: year
+          - name: week_of_year
 
-#       - name: dim_project
-#         description: "Table for project details"
-#         columns:
-#           - name: project_id
-#             description: "Primary key for project"
-#             tests:
-#               - unique
-#               - not_null
-#           - name: project_name
-#           - name: start_date
-#           - name: end_date
-#           - name: project_manager_id
-#           - name: budget
+      - name: dim_employee
+        description: "Table for employee details"
+        columns:
+          - name: employee_id
+            description: "Primary key for employee"
+            tests:
+              - unique
+              - not_null
+          - name: employee_name
+          - name: job_title
+          - name: hire_date
+          - name: department_id
+          - name: location
 
-#       - name: dim_department
-#         description: "Table for department details"
-#         columns:
-#           - name: department_id
-#             description: "Primary key for department"
-#             tests:
-#               - unique
-#               - not_null
-#           - name: department_name
-#             description: "Name of the department"
-#           - name: location
-#             description: "Location of the department"
-#           - name: head_of_department_id
-#             description: "ID of the head of the department"
-#             tests:
-#               - not_null
+      - name: dim_project
+        description: "Table for project details"
+        columns:
+          - name: project_id
+            description: "Primary key for project"
+            tests:
+              - unique
+              - not_null
+          - name: project_name
+          - name: start_date
+          - name: end_date
+          - name: project_manager_id
+          - name: budget
+
+      - name: dim_department
+        description: "Table for department details"
+        columns:
+          - name: department_id
+            description: "Primary key for department"
+            tests:
+              - unique
+              - not_null
+          - name: department_name
+            description: "Name of the department"
+          - name: location
+            description: "Location of the department"
+          - name: head_of_department_id
+            description: "ID of the head of the department"
+            tests:
+              - not_null

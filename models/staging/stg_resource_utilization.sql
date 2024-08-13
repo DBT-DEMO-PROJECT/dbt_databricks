@@ -1,6 +1,6 @@
 -- models/staging/stg_resource_utilisation.sql
 with source as (
-  select * from `dbtworkshop.raw_data.resource_utilisation_table`
+  select * from {{ source('raw_data', 'fact_resource_utilization') }}
 )
 
 select

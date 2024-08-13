@@ -1,6 +1,6 @@
 -- models/staging/stg_project.sql
 with source as (
-  select * from `dbtworkshop.raw_data.project_table`
+  select * from {{ source('raw_data', 'dim_project') }}
 )
 
 select

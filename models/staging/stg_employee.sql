@@ -1,6 +1,6 @@
 -- models/staging/stg_employee.sql
 with source as (
-  select * from {{ source('raw_data', 'employee') }}
+  select * from {{ source('raw_data', 'dim_employee') }}
 )
 
 select
