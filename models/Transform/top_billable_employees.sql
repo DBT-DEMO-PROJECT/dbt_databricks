@@ -1,5 +1,5 @@
 -- models/top_utilizing_employees.sql
-
+{{ config(schema='gold') }}
 -- Common Table Expression (CTE) to calculate total utilization hours per employee
 with utilization as (
   select

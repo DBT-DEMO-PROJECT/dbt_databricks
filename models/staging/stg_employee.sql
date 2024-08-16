@@ -1,4 +1,6 @@
 -- models/staging/stg_employee.sql
+{{ config(schema='silver') }}
+
 with source as (
   select * from {{ source('raw_data', 'dim_employee') }}
 )

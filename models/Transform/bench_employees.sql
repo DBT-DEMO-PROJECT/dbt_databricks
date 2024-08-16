@@ -1,3 +1,4 @@
+{{ config(schema='gold') }}
 
 with utilization as (
   select

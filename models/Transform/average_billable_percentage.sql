@@ -1,23 +1,26 @@
-with utilization as (
-  select
+-- Create the table in the target schema
+{{ config(schema='gold') }}
+
+WITH utilization AS (
+  SELECT
     ru.employee_id,
     e.employee_name,
-    sum(ru.utilization_hours) as total_hours
-  from {{ ref('stg_resource_utilization') }} ru
-  join {{ ref('stg_employee') }} e on ru.employee_id = e.employee_id
-  where ru.active = true
-  group by ru.employee_id, e.employee_name
+    SUM(ru.utilization_hours) AS total_hours
+  FROM {{ ref('stg_resource_utilization') }} ru
+  JOIN {{ ref('stg_employee') }} e ON ru.employee_id = e.employee_id
+  WHERE ru.active = TRUE
+  GROUP BY ru.employee_id, e.employee_name
 )
 
 -- Main query to calculate average billable percentage and select top 10 employees
-select
+SELECT
   u.employee_id,
   u.employee_name,
   u.total_hours,
-  round(avg(ru.utilization_percentage), 2) as average_billable_percentage
-from utilization u
-join {{ ref('stg_resource_utilization') }} ru 
-  on u.employee_id = ru.employee_id
-group by u.employee_id, u.employee_name, u.total_hours
-order by u.total_hours desc
-limit 10
+  ROUND(AVG(ru.utilization_percentage), 2) AS average_billable_percentage
+FROM utilization u
+JOIN {{ ref('stg_resource_utilization') }} ru 
+  ON u.employee_id = ru.employee_id
+GROUP BY u.employee_id, u.employee_name, u.total_hours
+ORDER BY u.total_hours DESC
+LIMIT 10
