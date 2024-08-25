@@ -45,9 +45,11 @@ models:
     # Optional: specific configuration for models in the models/example/ folder
     staging:
       +materialized: table
-      +schema: silver  
+      +schema: silver   
 
-    raw_data:
-      +materialized: table
-      +schema: bronze  
+
+      
+    # dbt_data_quality:
+    #   enabled: true  # Enable the data quality package
+    #   materialized: table 
 

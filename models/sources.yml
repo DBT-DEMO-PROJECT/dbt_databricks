@@ -2,8 +2,9 @@ version: 2
 
 sources:
   - name: raw_data
-    schema: bronze  # Ensure this matches your actual schema name
+    schema: bronze # Ensure this matches your actual schema name
     description: "Source for dbt database"
+
 
     tables:
       - name: fact_resource_utilization
