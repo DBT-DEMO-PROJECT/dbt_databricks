@@ -46,7 +46,7 @@ models:
     staging:
       +materialized: table
       +schema: silver   
-  dbt_dataquality:
+      
     sources:
       +tags: sources
     tests:

@@ -90,7 +90,6 @@ sources:
             description: "ID of the head of the department"
             tests:
               - not_null
-sources:
   - name: dbt_dataquality
     database: "{{ var('dbt_dataquality_database', target.database) }}"
     schema: "{{ var('dbt_dataquality_schema', target.schema) }}"  
