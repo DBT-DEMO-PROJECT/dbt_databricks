@@ -90,3 +90,25 @@ sources:
             description: "ID of the head of the department"
             tests:
               - not_null
+sources:
+  - name: dbt_dataquality
+    database: "{{ var('dbt_dataquality_database', target.database) }}"
+    schema: "{{ var('dbt_dataquality_schema', target.schema) }}"  
+    loader: dbt macro - dbt_dataquality.load_internal_stage
+    description: sources.json and run_results.json raw data
+
+    tables:
+      - name: stg_dbt_dataquality
+        identifier: "{{ var('dbt_dataquality_table', 'stg_dbt_dataquality') }}"
+        description: Holds the raw payloads from sources.json and run_results.json
+        columns:
+          - name: upload_timestamp_utc
+            description: The UTC time when the dbt log was uploaded (sources.json or run_results.json) 
+          - name: filename
+            description: The file name of the dbt log uploaded (sources.json or run_results.json) 
+          - name: payload
+            description: The actual json payload of the dbt log uploaded (sources.json or run_results.json) 
+          - name: payload_timestamp_utc
+            description: Same as the element "generated_at" as found in the dbt logs (sources.json or run_results.json) 
+          - name: payload_id
+            description: Same as the element "invocation_id" as found in the dbt logs (sources.json or run_results.json) 
