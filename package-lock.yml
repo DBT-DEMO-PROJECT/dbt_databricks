@@ -1,6 +1,0 @@
-packages:
-  - package: Divergent-Insights/dbt_dataquality
-    version: 0.3.5
-  - package: dbt-labs/dbt_utils
-    version: 0.8.2
-sha1_hash: 0458c7efa0ef24b46098b8a224c83024a6b35e0a
