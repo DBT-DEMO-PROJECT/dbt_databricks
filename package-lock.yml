@@ -1,12 +1,6 @@
 packages:
-<<<<<<< HEAD
-  - package: dbt-labs/dbt_utils
-    version: 0.8.2
-sha1_hash: a154701d87e6a5bcef5898371659e8d6bcd5b711
-=======
   - package: Divergent-Insights/dbt_dataquality
     version: 0.3.5
   - package: dbt-labs/dbt_utils
     version: 0.8.2
 sha1_hash: 0458c7efa0ef24b46098b8a224c83024a6b35e0a
->>>>>>> b5596535b7225c522c8f13db14f6c11a22174602
