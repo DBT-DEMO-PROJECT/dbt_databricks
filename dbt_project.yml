@@ -14,21 +14,7 @@ target-path: "target"
 clean-targets: ["target", "packages"]
 
 models:
-<<<<<<< HEAD
-  my_new_project:
-    # Applies to all models under models/transform/
-    Transform:
-      +materialized: table
-      +schema: gold  # Replace 'target_schema' with your desired schema name
-
-    # Optional: specific configuration for models in the models/example/ folder
-    staging:
-      +materialized: table
-      +schema: silver   
-      
-=======
   dbt_dataquality:
->>>>>>> f2392040635d7db86b00b6905c2fea208734600e
     sources:
       +tags: sources
     tests:
