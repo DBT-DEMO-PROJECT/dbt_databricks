@@ -1,6 +1,7 @@
 version: 2
 
 sources:
+<<<<<<< HEAD
   - name: raw_data
     schema: bronze # Ensure this matches your actual schema name
     description: "Source for dbt database"
@@ -90,6 +91,8 @@ sources:
             description: "ID of the head of the department"
             tests:
               - not_null
+=======
+>>>>>>> f2392040635d7db86b00b6905c2fea208734600e
   - name: dbt_dataquality
     database: "{{ var('dbt_dataquality_database', target.database) }}"
     schema: "{{ var('dbt_dataquality_schema', target.schema) }}"  
