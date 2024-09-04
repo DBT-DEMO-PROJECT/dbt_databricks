@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dbt Manifest Visualizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .chart {
+            margin: 20px;
+            max-width: 600px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>dbt Manifest Visualizations</h1>
+    <div class="container">
+        <div class="chart">
+            <h2>dbt Data Quality Metrics</h2>
+            <img src="dbt_data_quality_metrics.png" alt="dbt Data Quality Metrics">
+        </div>
+
+        <div class="chart">
+            <h2>Distribution of Resource Types</h2>
+            <img src="resource_types_distribution.png" alt="Resource Types Distribution">
+        </div>
+        <div class="chart">
+            <h2>Model Materialization Types</h2>
+            <img src="materialization_types.png" alt="Model Materialization Types">
+        </div>
+        <div class="chart">
+            <h2>Node Details (Unique ID and File Path Lengths)</h2>
+            <img src="node_details_plot.png" alt="Node Details Plot">
+        </div>
+        <div class="chart">
+            <h2>Number of Tables per Schema</h2>
+            <img src="schema_distribution.png" alt="Number of Tables per Schema">
+        </div>
+        <div class="chart">
+            <h2>Macro Distribution</h2>
+            <img src="macro_distribution.png" alt="Macro Distribution">
+        </div>
+        <div class="chart">
+            <h2>Test Results Status Distribution</h2>
+            <img src="test_results_status.png" alt="Test Results Status Distribution">
+        </div>
+        <div class="chart">
+            <h2>Distribution of Test Execution Times</h2>
+            <img src="test_execution_times_distribution.png" alt="Test Execution Times Distribution">
+        </div>
+        <div class="chart">
+            <h2>Frequency of Error Messages</h2>
+            <img src="error_messages_frequency.png" alt="Error Messages Frequency">
+        </div>
+    </div>
+</body>
+</html>
